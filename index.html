@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Teaser | OHLMEC - Mechanical Fitters, Boilermakers & T/As</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 5px auto;
+            padding: 5px;
+            background-color: #f0f0f0;
+        }
+        .job-teaser {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid #0066cc;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #0066cc;
+            padding: 10px;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .job-title {
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .content {
+            padding: 5px;
+            position: relative;
+            overflow: hidden;
+            min-height: 160px;
+        }
+        .slide {
+            display: none;
+            animation: fadeEffect 0.5s;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .nav-dots {
+            text-align: center;
+            margin-top: 2px;
+        }
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #0066cc;
+        }
+        .full-ad-toggle {
+            text-align: right;
+            padding: 2px 5px;
+            background-color: #f0f0f0;
+            font-size: 0.9em;
+        }
+        .full-job-ad {
+            display: none;
+            padding: 5px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .apply-button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        .apply-button:hover {
+            background-color: #0052a3;
+        }
+        h2 {
+            margin: 5px 0;
+            color: #0066cc;
+            font-size: 1.1em;
+        }
+        ul {
+            margin: 3px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 2px;
+        }
+        p {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="job-teaser">
+        <div class="header">
+            <img src="https://imgur.com/tOlTNfk.png" alt="OHLMEC Logo" class="logo">
+            <h1 class="job-title">Mechanical Fitters, Boilermakers & T/As</h1>
+        </div>
+        <div class="content">
+            <div class="slide active">
+                <h2>Job Overview</h2>
+                <p>Join OHLMEC in Kalgoorlie for site-based roles:</p>
+                <ul>
+                    <li>📅 Full-time positions</li>
+                    <li>💰 Attractive salary package</li>
+                    <li>🚀 Career development opportunities</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Key Requirements</h2>
+                <ul>
+                    <li>🏭 Fixed plant maintenance experience (trades)</li>
+                    <li>🎓 Australian Recognised Trade Qualification</li>
+                    <li>🚗 Manual Australian Driver's licence</li>
+                    <li>🦺 Safety tickets (advantageous)</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Company Values</h2>
+                <ul>
+                    <li>🛡️ Safety is an attitude</li>
+                    <li>✅ Quality across all levels</li>
+                    <li>🤝 Culture you're proud of</li>
+                    <li>🤲 Integrity is everything</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Benefits</h2>
+                <ul>
+                    <li>💵 Competitive salary</li>
+                    <li>📆 Rosters: 4/1, 2/1 & 8/6</li>
+                    <li>📈 Growing company (100+ workforce)</li>
+                    <li>🌈 Equal Opportunity Employer</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <div class="full-ad-toggle">
+            <label for="fullAdToggle">Show Full Job Ad</label>
+            <input type="checkbox" id="fullAdToggle" onclick="toggleFullAd()">
+        </div>
+        <div class="full-job-ad" id="fullJobAd">
+            <h2>Full Job Description</h2>
+            <p>OHLMEC PTY LTD is a leading provider of project management, consulting, specialised maintenance, fabrication, construction support, and structural integrity maintenance services across Western Australia. With a workforce approaching 100+, we have strategically grown from our beginnings in early 2022.</p>
+            
+            <h3>Position: Site Based Mechanical Fitters, Boilermakers & T/As</h3>
+            <p>Location: Kalgoorlie, Goldfields & Esperance WA</p>
+            
+            <h3>About the Role:</h3>
+            <p>We are seeking experienced local Mechanical Fitters, Boilermakers & T/As to join our Kalgoorlie Operations. This is an exciting opportunity for skilled professionals to contribute to our growing team and work on diverse projects in the mining and resources sector.</p>
+            
+            <h3>Key Responsibilities:</h3>
+            <ul>
+                <li>Maintain fixed plant and equipment including crushers, scrubber and heavy media drums</li>
+                <li>Carry out general fabrication work and chute re-lines</li>
+                <li>Ensure and promote safe working practices</li>
+                <li>Work independently as well as part of the Fixed Plant team</li>
+                <li>Liaise with other maintenance personnel to complete set goals</li>
+            </ul>
+            
+            <h3>Requirements for Tradespeople:</h3>
+            <ul>
+                <li>Significant experience in a fixed plant maintenance role within a mineral processing plant or similar mining environment</li>
+                <li>Proven experience with crushers, grinding mills, feeders, conveyors, pumps, and bulk handling equipment</li>
+                <li>Experience working with and demonstrated compliance with work area permit systems</li>
+                <li>Ability to perform under pressure and have an excellent level of mechanical competence, diagnostic and reporting skills</li>
+                <li>Australian Recognised Mechanical Trade Qualification (essential)</li>
+                <li>Dual Trade qualified Boilermaker/Mechanical Trade fitter (Desirable)</li>
+                <li>Experience with Warman pumps would be advantageous</li>
+            </ul>
+            
+            <h3>Requirements for All Candidates:</h3>
+            <ul>
+                <li>A current and valid manual Australian Driver's licence (essential)</li>
+                <li>Confined space, Working at heights, EWP, (LF) Forklift, Crane, and Basic rigging Tickets (advantageous)</li>
+                <li>HRW Licence (CN, DG, RB) and EWP Ticket (desirable)</li>
+                <li>NPC within 12 Months or willing to obtain</li>
+                <li>Ability to pass a full pre-employment medical</li>
+                <li>Provide a compliant drug and alcohol screen on request</li>
+                <li>Provide valid references</li>
+                <li>Strong commitment to following company policies</li>
+                <li>Willingness to improve and add knowledge to the team</li>
+            </ul>
+            
+            <h3>Benefits:</h3>
+            <ul>
+                <li>Attractive salary package with $15k site allowance and annual company bonus</li>
+                <li>Various rosters available: 4/1, 2/1 & 8/6</li>
+                <li>Growth and development opportunities through Study Assistance and other training paths</li>
+                <li>Employee benefits including discounted health insurance, salary sacrificing options and hotel discounts</li>
+                <li>Comfortable permanent rooms, excellent recreational facilities and a welcoming site culture</li>
+                <li>Opportunity to join a growing WA owned and operated company</li>
+            </ul>
+            
+            <p>OHLMEC is an Equal Opportunity Employer and promotes equality and diversity. We operate under our Four Core Values: 'Safety is an attitude', 'Quality across all levels of business and in our delivery', 'A Culture you are proud to be part of', and 'Our Integrity is everything to our clients and ourselves'.</p>
+            
+            <p>Indigenous Australians and candidates from minority groups are encouraged to apply.</p>
+            
+            <p>If you are interested in taking the next step in your career or simply feel like a change of scenery, please do not delay in applying as shortlisting will begin immediately.</p>
+        </div>
+        <a href="https://www.seek.com.au/Boilermaker-jobs/in-Kalgoorlie-WA-6430?jobId=78424467&type=standout" class="apply-button" target="_blank">Apply Now</a>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex-1].classList.add("active");  
+            dots[slideIndex-1].classList.add("active");
+        }
+
+        function toggleFullAd() {
+            const fullJobAd = document.getElementById("fullJobAd");
+            fullJobAd.style.display = fullJobAd.style.display === "block" ? "none" : "block";
+        }
+
+        // Auto-slide functionality
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
